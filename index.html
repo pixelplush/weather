@@ -28,12 +28,22 @@
         <script>
             const params = new URLSearchParams( location.search );
             setupGame( "Stream Weather", {
+                requires: "addon_streamweather",
                 path: "https://cdn.jsdelivr.net/gh/pixelplush",
             }, {
                 channel: params.get( "channel" ),
                 oauth: params.get( "oauth" ),
                 messageFormat: params.get( "messageFormat" ),
-                volume: params.get( "volume" )
+                volume: params.get( "volume" ),
+                rain: params.get( "rain" ),
+                heavyrain: params.get( "heavyrain" ),
+                lightning: params.get( "lightning" ),
+                rainbow: params.get( "rainbow" ),
+                sunshine: params.get( "sunshine" ),
+                blossoms: params.get( "blossoms" ),
+                snow: params.get( "snow" ),
+                blizzard: params.get( "blizzard" ),
+                hail: params.get( "hail" )
             });
         </script>
     </body>
