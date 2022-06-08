@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stream Rainbow Overlay by PixelPlush</title>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6EJRXTPH3Z"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-6EJRXTPH3Z');
+        </script>
+        <link rel="stylesheet" href="web/fonts.css" />
+        <script src="https://cdn.jsdelivr.net/npm/pinkfluffyunicorn@1.0.2/dist/pinkfluffyunicorn.min.js"></script>
+        <script src="web/rainbow.min.js"></script>
+        <style>
+            * {
+                background-color: transparent;
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="unicorn-display"></div>
+        <script>
+            const params = new URLSearchParams( location.search );
+            setupGame( "Stream Rainbow", {
+                // requires: "addon_streamweather",
+                path: "https://cdn.jsdelivr.net/gh/pixelplush",
+            }, {
+                channel: params.get( "channel" ),
+                oauth: params.get( "oauth" ),
+                messageFormat: params.get( "messageFormat" ),
+                volume: params.get( "volume" ),
+                rainbow: params.get( "rainbow" ),
+            });
+        </script>
+    </body>
+</html>
