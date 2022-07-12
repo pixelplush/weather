@@ -28,7 +28,7 @@
         <script>
             const params = new URLSearchParams( location.search );
             setupGame( "Stream Rainbow", {
-                // requires: "addon_streamweather",
+                requires: "addon_streamweather",
                 path: "https://cdn.jsdelivr.net/gh/pixelplush",
             }, {
                 channel: params.get( "channel" ),
