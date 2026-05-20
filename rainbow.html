@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Redirecting...</title>
-</head>
-<body>
-<p>This game has moved. <a href="https://cdn.pixelplush.dev/weather/rainbow.html">Click here</a> if not redirected.</p>
-<script>window.location.replace("https://cdn.pixelplush.dev/weather/rainbow.html" + window.location.search + window.location.hash);</script>
-</body>
+    <head>
+        <title>Rainbow Overlay by PixelPlush</title>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135113520-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-135113520-1');
+        </script>
+        <link rel="stylesheet" href="https://cdn.pixelplush.dev/weather/web/fonts.css" />
+        <script src="https://cdn.pixelplush.dev/assets/pinkfluffyunicorn.min.js"></script>
+        <script src="https://cdn.pixelplush.dev/weather/web/rainbow.min.js"></script>
+        <style>
+            * {
+                background-color: transparent;
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="unicorn-display"></div>
+        <script>
+            const params = new URLSearchParams( location.search );
+            setupGame( "Stream Weather", {
+                requires: "addon_streamweather",
+                path: "https://cdn.pixelplush.dev",
+            }, {
+                channel: params.get( "channel" ),
+                oauth: params.get( "oauth" ),
+                refreshToken: params.get( "refreshToken" ),
+                messageFormat: params.get( "messageFormat" ),
+                volume: params.get( "volume" ),
+                rainbow: params.get( "rainbow" ),
+            });
+        </script>
+    </body>
 </html>
